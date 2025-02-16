@@ -1,43 +1,44 @@
-const elementAjoute = document.querySelector('.add');
-const activities = document.querySelector('.todos');
+const ajoute = document.querySelector('.add');
+const taches = document.querySelector('.todos');
 const elementRecherche = document.querySelector('.search input');
-elementAjoute.addEventListener('submit', (sub) => {
-    sub.preventDefault();
+ajoute.addEventListener('submit', (s) => {
+    s.preventDefault();
 
-    const newelement = elementAjoute.add.value.trim();
+    const nouveau = ajoute.add.value.trim();
 
-    if (newelement.length != 0) {
-        const newTaskHTML = `
+    if (nouveau.length != 0) {
+        const nouvelletache = `
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span>${newelement}</span>
+                <span>${nouveau}</span>
                 <i class="far fa-trash-alt delete"></i>
             </li>
         `;
-        activities.innerHTML += newTaskHTML;
-        elementAjoute.reset();
+        taches.innerHTML += nouvelletache;
+        ajoute.reset();
     }
 });
 
-activities.addEventListener('click', (sub) => {
-    if (sub.target.classList.contains('delete')) {
-        sub.target.parentElement.remove();
+taches.addEventListener('click', (s) => {
+    if (s.target.classList.contains('delete')) {
+        s.target.parentElement.remove();
     }
 });
+
 ajouter = document.querySelector(".search");
 ajouter.addEventListener('submit', (e)=> { 
     e.preventDefault()
-        }
-);
-elementRecherche.addEventListener('input', () => {
-    const motRecherche = elementRecherche.value.toLowerCase();
-    const taskItems = activities.querySelectorAll('li');
+});
 
-    taskItems.forEach(task => {
-        const taskText = task.querySelector('span').textContent.toLowerCase();
-        if (taskText.includes(motRecherche)) {
-            task.classList.remove('supprimer');
+elementRecherche.addEventListener('input', () => {
+    const mot = elementRecherche.value.toLowerCase();
+    const lignes = taches.querySelectorAll('li');
+
+    lignes.forEach(tache => {
+        const contenutache = tache.querySelector('span').textContent.toLowerCase();
+        if (contenutache.includes(mot)) {
+            tache.classList.remove('supprimer');
         } else {
-            task.classList.add('supprimer');
+            tache.classList.add('supprimer');
         }
     });
 });
