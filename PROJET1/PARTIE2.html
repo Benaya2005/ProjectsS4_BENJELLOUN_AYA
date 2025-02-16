@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <script src="PARTIE2.js" defer></script>
+    <style>
+        /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    .body {
+        font-family: 'Arial';
+        background-color: #b0ffb4;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Form Container */
+    .form {
+        background-color: #025f34;
+        padding: 30px;
+        border-radius: 10px;
+        width: 100%;
+        color: white;
+        max-width: 600px;
+        text-align: center;
+    }
+
+
+
+    /* Form Labels */
+    .label {
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        display: block;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    /* Form Inputs */
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid black;
+        font-size: 16px;
+        background-color: #fafafa;
+    }
+
+    /* Button Styling */
+    .button {
+        background-color: rgb(0, 2, 1);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+
+
+
+
+    /* Select Boxes */
+    .select {
+        padding: 12px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #fafafa;
+    }
+
+    
+
+    .container {
+        color: white;
+        width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color:darkslategray;
+        display: none;
+        } 
+    .titre{
+        text-align: center;
+        font-size: 50px;
+    }  
+    
+    
+    .bouton{
+        margin: 10px;
+        height: 30px;
+        width: 80px;
+        display: none;
+    } 
+    .bouton1{
+        margin-left: 380px;
+        height: 50px;
+        width: 120px;
+        font-weight:bold;
+        font-size: large;
+        background-color: greenyellow;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        display: none;
+    }
+    .resultat{
+        background-color: white;
+        color: red;
+        height: 40px;
+        text-align: center;
+        font-size: 27px;
+        font-weight: bold;
+        display: none;
+        
+    }
+    .timer{
+        margin-left: 50px;
+    }
+    .start{
+        background-color: rgb(6, 179, 20);
+        color: white;
+        height: 40px;
+        font-weight: bold;
+        width: 150px;
+        cursor: pointer;
+        border: none;
+        align-content: center;
+        margin-left: 230px;
+    }
+    .inputinfo{
+        display: block;
+        margin-top: 100px;
+        margin-left: 350px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="inputinfo" id="inputinf">
+        <form class="form">
+    
+            <label for="trivia_amount">Number of Questions:</label>
+            <input type="number" name="trivia_amount" id="trivia_amount" class="form-control" min="1" max="50" value="10">
+    
+            <br>
+    
+            <label for="trivia_category">Select Category: </label>
+            <select name="trivia_category" class="form-control">
+                <option value="any">Any Category</option>
+                <option value="9">General Knowledge</option>
+                <option value="10">Entertainment: Books</option><option value="11">Entertainment: Film</option><option value="12">Entertainment: Music</option><option value="13">Entertainment: Musicals &amp; Theatres</option><option value="14">Entertainment: Television</option><option value="15">Entertainment: Video Games</option><option value="16">Entertainment: Board Games</option><option value="17">Science &amp; Nature</option><option value="18">Science: Computers</option><option value="19">Science: Mathematics</option><option value="20">Mythology</option><option value="21">Sports</option><option value="22">Geography</option><option value="23">History</option><option value="24">Politics</option><option value="25">Art</option><option value="26">Celebrities</option><option value="27">Animals</option><option value="28">Vehicles</option><option value="29">Entertainment: Comics</option><option value="30">Science: Gadgets</option><option value="31">Entertainment: Japanese Anime &amp; Manga</option><option value="32">Entertainment: Cartoon &amp; Animations</option>		</select>
+    
+            <br>
+    
+            <label for="trivia_difficulty">Select Difficulty: </label>
+            <select name="trivia_difficulty" class="form-control">
+                <option value="any">Any Difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+    
+            <br>
+    
+            <label for="trivia_type">Select Type: </label>
+            <select name="trivia_type" class="form-control">;
+                <option value="any">Any Type</option>
+                <option value="multiple">Multiple Choice</option>
+                <option value="boolean">True / False</option>
+            </select>
+    
+            <br>
+    
+            <button class="button" onclick="fetchQuestions()">Generate</button>
+        </form>
+    </div>
+    <div class="container" id="container">
+        <h1 class="titre">Quiz</h1>
+        <button class="start" id="start" onclick="commencer()">START</button>
+        <div class="resultat" id="score"></div>
+        <div class="question" id="questions">
+        </div>
+        <button class="bouton" id="submit">OK</button>
+        <button class="bouton1" id="submit1" onclick="valider()">SUBMIT</button>
+
+    </div>
+
+    
+</body>
+</html>
