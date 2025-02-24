@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Manipulation de vue</title>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<style>
+	#monapp{
+		justify-content: center;
+		align-items: center;
+		
+	}
+	.bouton1{
+		height: 30px;
+		width: 140px;
+	}
+	.bouton2{
+		margin: 10px 10px;
+		width: 30px;
+	}
+</style>
+</head>
+<body>
+
+<div id="monapp">
+	<button class="bouton1" @click="titreClique">{{ titre }}</button><br>
+	<button class="bouton2" @click="incrementer">++</button>{{ compteur }}<button class="bouton2" @click="decrementer">--</button></div>
+<div id="monapp2">
+	<input type="text" v-model="userInput" @input="checkSpace" placeholder="Enter text here">
+	<p v-show="hasSpace">Le texte que vous avez entré contient un espace!</p>
+</div>
+<script>
+	const appli = {
+		data () {
+				return {
+					titre:"Cliquez moi!",
+					compteur :0
+				}
+			},
+		methods :{
+			titreClique(){
+				this.titre="Cliqué!"
+			},
+			incrementer(){
+				this.compteur++;
+			},
+			decrementer(){
+				this.compteur--;
+			}
+		}
+			
+	};
+	const appli2={
+		data(){
+			return{
+				userInput: '',
+				hasSpace: false
+			}
+		},
+		methods :{
+			checkSpace() {
+      			this.hasSpace = this.userInput.includes(' ');
+    		}
+		}
+	};
+	
+	Vue.createApp(appli).mount("#monapp");
+	Vue.createApp(appli2).mount("#monapp2");
+
+</script>
+</body>
+</html>

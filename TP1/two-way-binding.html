@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Manipulation de vue</title>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="monapp">
+	<label>Couleur de la police</label><br>
+	<input name="radio1" type="radio" value="red" v-model="radioCheck">Rouge<br>
+	<input name="radio1" type="radio" value="blue" v-model="radioCheck">Bleu<br>
+	<label>Afficher/cacher le paragraphe?</label>
+	<input type="checkbox" v-model="isChecked">
+	<div v-show="isChecked" :style="{ color: radioCheck }" id="texte">
+		texte texte texte texte texte texte<br>
+		texte texte textetexte texte texte
+	</div>
+</div>
+
+<script>
+	const appli = {
+		data () {
+			return {
+				radioCheck : "",
+				isChecked: false,  
+			}
+		}
+	};
+
+	Vue.createApp(appli).mount("#monapp");
+</script>
+
+</body>
+</html>
