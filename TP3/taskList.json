@@ -1,0 +1,154 @@
+[
+    {
+      "id": 1,
+      "title": "Faire les courses",
+      "description": "Acheter des légumes et du lait.",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Faire du sport",
+      "description": "Courir pendant 30 minutes.",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Réviser pour l'examen",
+      "description": "Relire le chapitre 5 du manuel.",
+      "completed": false
+    },
+    
+    {
+      "id": 4,
+      "title": "Faire la vaisselle",
+      "description": "Laver et ranger la vaisselle.",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Lire un livre",
+      "description": "Lire au moins 20 pages du livre que j'ai commencé.",
+      "completed": true
+    },
+    {
+      "id": 6,
+      "title": "Ranger la chambre",
+      "description": "Faire le ménage et organiser la chambre.",
+      "completed": false
+    },
+    {
+      "id": 7,
+      "title": "Appeler un ami",
+      "description": "Téléphoner à Paul pour discuter.",
+      "completed": true
+    },
+    {
+      "id": 8,
+      "title": "Écrire un e-mail",
+      "description": "Envoyer un e-mail à ma collègue concernant le projet.",
+      "completed": false
+    },
+    {
+      "id": 9,
+      "title": "Préparer le dîner",
+      "description": "Cuisiner des pâtes avec une sauce tomate maison.",
+      "completed": false
+    },
+    {
+      "id": 10,
+      "title": "Faire une promenade",
+      "description": "Marcher pendant 30 minutes dans le parc.",
+      "completed": true
+    },
+    {
+      "id": 11,
+      "title": "Faire le ménage",
+      "description": "Passer l'aspirateur et nettoyer les sols.",
+      "completed": false
+    },
+    {
+      "id": 12,
+      "title": "Étudier pour l'examen de maths",
+      "description": "Faire des exercices de révision pour le test de maths.",
+      "completed": true
+    },
+    {
+      "id": 13,
+      "title": "Répondre aux messages",
+      "description": "Répondre aux messages non lus sur mon téléphone.",
+      "completed": false
+    },
+    {
+      "id": 14,
+      "title": "Faire du jardinage",
+      "description": "Arroser les plantes et désherber le jardin.",
+      "completed": true
+    },
+    {
+      "id": 15,
+      "title": "Regarder un film",
+      "description": "Regarder un film de comédie avec des amis.",
+      "completed": false
+    },
+    {
+      "id": 16,
+      "title": "Acheter des cadeaux",
+      "description": "Acheter un cadeau pour l'anniversaire de ma sœur.",
+      "completed": false
+    },
+    {
+      "id": 17,
+      "title": "Faire une sieste",
+      "description": "Dormir pendant 30 minutes pour récupérer de la fatigue.",
+      "completed": true
+    },
+    {
+      "id": 18,
+      "title": "Prendre un rendez-vous médical",
+      "description": "Appeler le médecin pour fixer un rendez-vous.",
+      "completed": false
+    },
+    {
+      "id": 19,
+      "title": "Nettoyer le réfrigérateur",
+      "description": "Vider et nettoyer le réfrigérateur.",
+      "completed": false
+    },
+    {
+      "id": 20,
+      "title": "Faire du yoga",
+      "description": "Faire une séance de yoga de 20 minutes.",
+      "completed": true
+    },
+    {
+      "id": 21,
+      "title": "Préparer le petit-déjeuner",
+      "description": "Faire des œufs brouillés et du café.",
+      "completed": true
+    },
+    {
+      "id": 22,
+      "title": "Organiser le bureau",
+      "description": "Ranger les papiers et organiser mon espace de travail.",
+      "completed": false
+    },
+    {
+      "id": 23,
+      "title": "Faire des courses en ligne",
+      "description": "Commander de la nourriture et des produits ménagers sur internet.",
+      "completed": false
+    },
+    {
+      "id": 24,
+      "title": "Rechercher un emploi",
+      "description": "Consulter les offres d'emploi et postuler à quelques postes.",
+      "completed": false
+    },
+    {
+      "id": 25,
+      "title": "Apprendre une nouvelle compétence",
+      "description": "Suivre un tutoriel en ligne pour apprendre le montage vidéo.",
+      "completed": true
+    }
+  ]
+  

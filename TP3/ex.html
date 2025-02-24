@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            background-color: #ffe4f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        #app {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        button {
+            background-color: #750f4b;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #ac1044;
+        }
+
+    
+        .task {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+
+        .task div {
+            margin-bottom: 10px;
+        }
+
+
+        .task-count {
+            font-size: 18px;
+            margin: 15px 0;
+            color: #25021a;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Gestionnaire de tâches</h1>
+
+        <button @click="fini">Terminées</button>
+        <button @click="pasfini">A faire</button>
+        
+        <div class="task-count">Nombre total des tâches ({{ done ? 'Terminées' : 'A faire' }}): {{ filteredTasks.length }}</div>
+
+        <div v-for="t in filteredTasks" :key="t.id">
+            <div class="task">
+                <div><strong>{{ t.title }}</strong></div>
+                <div>{{ t.description }}</div>
+                <button v-show="!t.completed" @click="markAsCompleted(t)" class="btn">Marquer comme terminée</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    taskList: [],
+                    done: true  
+                };
+            },
+            methods: {
+                loadtasks() {
+                    fetch('taskList.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            this.taskList = data;
+                        })
+                        .catch(error => {
+                            console.error('Error loading tasks data:', error);
+                        });
+                },
+                fini() {
+                    this.done = true;  
+                },
+                pasfini() {
+                    this.done = false;  
+                },
+                markAsCompleted(task) {
+                    task.completed = true;  
+                }
+            },
+            computed: {
+                filteredTasks() {
+                    return this.taskList.filter(task => task.completed === this.done);
+                }
+            },
+            mounted() {
+                this.loadtasks();  
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
 
