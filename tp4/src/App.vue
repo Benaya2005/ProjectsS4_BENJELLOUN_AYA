@@ -8,15 +8,16 @@
         <!-- Menu de recherche -->
         <section class="filtres">
             <h3>Filtres</h3>
-            <input type="text" v-model="search" placeholder="Rechercher une pièce..."><br>
+            <input type="text" v-model="search" placeholder="Rechercher..."><br>
             <select v-model="categorie">
                 <option value="">Toutes les catégories</option>
-                <option v-for="cat in categories" :key="cat" :value="cat">{{ cat }}</option>            </select><br>
+                <option v-for="c in categories" :key="c" :value="c">{{ c }}</option>            
+                </select><br>
             <label>
-                <input type="checkbox" v-model="disponibleSeulement"> Disponible seulement
+                <input type="checkbox" v-model="dispo"> Disponible seulement
             </label><br>
-            <button @click="triAscendant = !triAscendant">
-                Trier par prix {{ triAscendant ? 'décroissant' : 'croissant' }}
+            <button @click="tri = !tri">
+                Trier par prix {{ tri ? 'décroissant' : 'croissant' }}
             </button>
         </section>
 
@@ -25,7 +26,7 @@
             <div v-for="piece in piecesFiltrees" :key="piece.id" class="fiche">
                 <img :src="piece.image" :alt="piece.nom">
                 <h3>{{ piece.nom }}</h3>
-                <p>{{ piece.prix }} €</p>
+                <p>{{ piece.prix }} dhs</p>
                 <p>{{ piece.categorie }}</p>
                 <div v-if="piece.disponible" class="disponible">En stock</div>
                 <div v-else class="rupture">En rupture de stock</div>
@@ -39,7 +40,7 @@
             <h3>Panier</h3>
             <ul>
                 <li v-for="item in panier" :key="item.id">
-                    {{ item.nom }} - {{ item.prix }} €
+                    {{ item.nom }} - {{ item.prix }} dhs
                 </li>
             </ul>
         </section>
@@ -55,8 +56,8 @@ return {
     pieces: [],
     search: '',
     categorie: '',
-    disponibleSeulement: false,
-    triAscendant: true,
+    dispo: false,
+    tri: true,
     panier: []
 };
 },
@@ -74,10 +75,10 @@ piecesFiltrees() {
     if (this.categorie) {
         filtres = filtres.filter(piece => piece.categorie === this.categorie);
     }
-    if (this.disponibleSeulement) {
+    if (this.dispo) {
         filtres = filtres.filter(piece => piece.disponible);
     }
-    filtres.sort((a, b) => this.triAscendant ? a.prix - b.prix : b.prix - a.prix);
+    filtres.sort((a, b) => this.tri ? a.prix - b.prix : b.prix - a.prix);
 
     return filtres;
 }
