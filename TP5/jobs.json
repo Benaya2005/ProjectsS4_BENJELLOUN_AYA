@@ -1,0 +1,53 @@
+{
+  "jobs": [
+    {
+      "id": "3",
+      "titre": "Chef de Projet IT",
+      "description": "Gestion de projets informatiques de bout en bout, coordination des équipes techniques.",
+      "salaire": 70000,
+      "date": "2025-03-10"
+    },
+    {
+      "id": "4",
+      "titre": "Ingénieur Logiciel",
+      "description": "Développement d'applications logicielles robustes et performantes pour divers clients.",
+      "salaire": 60000,
+      "date": "2025-02-28"
+    },
+    {
+      "id": "5",
+      "titre": "Designer UX/UI",
+      "description": "Création d'interfaces utilisateur intuitives et attrayantes pour améliorer l'expérience client.",
+      "salaire": 40000,
+      "date": "2025-03-01"
+    },
+    {
+      "id": "6",
+      "titre": "Responsable Marketing Digital",
+      "description": "Élaboration de stratégies de marketing en ligne pour accroître la visibilité de l'entreprise.",
+      "salaire": 55000,
+      "date": "2025-02-25"
+    },
+    {
+      "id": "7",
+      "titre": "Consultant en Cybersécurité",
+      "description": "Conseiller les entreprises sur la sécurisation de leurs systèmes informatiques et réseaux.",
+      "salaire": 80000,
+      "date": "2025-03-12"
+    },
+    {
+      "id": "8",
+      "titre": "Technicien Réseaux",
+      "description": "Installation, configuration et maintenance des équipements réseau.",
+      "salaire": 30000,
+      "date": "2025-02-20"
+    },
+    {
+      "id": "10",
+      "titre": "Commercial B2B",
+      "description": "Prospection et gestion d'un portefeuille de clients professionnels.",
+      "salaire": 45000,
+      "date": "2025-03-14"
+    }
+  ]
+}
